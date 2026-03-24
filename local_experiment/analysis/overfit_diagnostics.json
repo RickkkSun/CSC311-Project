@@ -1,0 +1,88 @@
+{
+  "selected_config": {
+    "hidden_layer_sizes": [
+      128,
+      48
+    ],
+    "alpha": 0.0012,
+    "learning_rate_init": 0.0008,
+    "batch_size": 64,
+    "max_iter": 100,
+    "max_text_features": 1800,
+    "sublinear_tf": true,
+    "random_state": 42
+  },
+  "use_group_relative_features": true,
+  "split_summary": {
+    "seed": 42,
+    "train_rows": 1179,
+    "val_rows": 252,
+    "test_rows": 255,
+    "train_groups": 393,
+    "val_groups": 84,
+    "test_groups": 85
+  },
+  "fractions": [
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8,
+    1.0
+  ],
+  "repeats": 3,
+  "best_validation_accuracy": 0.9325396825396826,
+  "best_validation_gap": 0.0462559069429298,
+  "final_local_test_accuracy": 0.9411764705882353,
+  "final_train_test_gap": 0.03646154478562913,
+  "inner_cv_mean_accuracy": 0.9143784485556639,
+  "inner_cv_accuracy_std": 0.011169817900614918,
+  "learning_curve_tail": [
+    {
+      "fraction": 0.8,
+      "train_accuracy_mean": 0.9780608634111818,
+      "train_accuracy_std": 0.0016215766790360698,
+      "validation_accuracy_mean": 0.9206349206349206,
+      "validation_accuracy_std": 0.003968253968254065,
+      "test_accuracy_mean": 0.9424836601307188,
+      "test_accuracy_std": 0.011980590052172089,
+      "train_macro_f1_mean": 0.9781738385564678,
+      "train_macro_f1_std": 0.0016147685900057506,
+      "validation_macro_f1_mean": 0.9212205134195122,
+      "validation_macro_f1_std": 0.004018757054920829,
+      "test_macro_f1_mean": 0.9427981033807792,
+      "test_macro_f1_std": 0.011686243026055903,
+      "train_validation_gap_mean": 0.057425942776261264,
+      "train_validation_gap_std": 0.003154581243480761,
+      "train_test_gap_mean": 0.03557720328046295,
+      "train_test_gap_std": 0.012317254061616023,
+      "n_groups_mean": 314.0,
+      "n_groups_std": 0.0,
+      "n_rows_mean": 942.0,
+      "n_rows_std": 0.0
+    },
+    {
+      "fraction": 1.0,
+      "train_accuracy_mean": 0.9787955894826124,
+      "train_accuracy_std": 0.0,
+      "validation_accuracy_mean": 0.9325396825396824,
+      "validation_accuracy_std": 0.0,
+      "test_accuracy_mean": 0.9333333333333332,
+      "test_accuracy_std": 0.0,
+      "train_macro_f1_mean": 0.9789353791904443,
+      "train_macro_f1_std": 0.0,
+      "validation_macro_f1_mean": 0.9326660331538381,
+      "validation_macro_f1_std": 0.0,
+      "test_macro_f1_mean": 0.9334919122059571,
+      "test_macro_f1_std": 0.0,
+      "train_validation_gap_mean": 0.0462559069429298,
+      "train_validation_gap_std": 0.0,
+      "train_test_gap_mean": 0.04546225614927901,
+      "train_test_gap_std": 0.0,
+      "n_groups_mean": 393.0,
+      "n_groups_std": 0.0,
+      "n_rows_mean": 1179.0,
+      "n_rows_std": 0.0
+    }
+  ]
+}
