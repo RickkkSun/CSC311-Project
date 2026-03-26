@@ -11,8 +11,8 @@ For the actual project submission, only the root submission files are needed. `l
 
 - `pred.py`: prediction entry point.
 - `mlp_preprocess.py`: preprocessing and feature-construction code used by `pred.py`.
-- `mlp_metadata.json`: exported preprocessing metadata.
-- `mlp_weights.npz`: exported MLP weights.
+- `mlp_metadata.json`: combined preprocessing metadata for the primary and fallback MLPs.
+- `mlp_weights.npz`: combined exported weights for the primary and fallback MLPs.
 
 ## Hidden-Test Usage
 

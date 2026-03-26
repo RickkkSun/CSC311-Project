@@ -251,6 +251,14 @@ def _add_group_relative_raw_features(df: pd.DataFrame, base_columns: list[str]) 
     return out
 
 
+def _add_zero_group_relative_raw_features(df: pd.DataFrame, base_columns: list[str]) -> pd.DataFrame:
+    out = df.copy()
+    for column in base_columns:
+        out[f"{column}_group_centered"] = 0.0
+        out[f"{column}_group_rank"] = 0.0
+    return out
+
+
 def fit_group_relative_metadata(train_df: pd.DataFrame, metadata: dict) -> dict:
     updated = {
         key: (value.copy() if isinstance(value, dict) else list(value) if isinstance(value, list) else value)
@@ -287,7 +295,11 @@ def fit_group_relative_metadata(train_df: pd.DataFrame, metadata: dict) -> dict:
     return updated
 
 
-def apply_shared_metadata(df: pd.DataFrame, metadata: dict) -> pd.DataFrame:
+def apply_shared_metadata(
+    df: pd.DataFrame,
+    metadata: dict,
+    use_group_relative: bool | None = None,
+) -> pd.DataFrame:
     out = df.copy()
 
     raw_to_value = [
@@ -313,7 +325,10 @@ def apply_shared_metadata(df: pd.DataFrame, metadata: dict) -> pd.DataFrame:
 
     group_relative_base_columns = metadata.get("group_relative_base_columns")
     if group_relative_base_columns:
-        out = _add_group_relative_raw_features(out, group_relative_base_columns)
+        if use_group_relative is False:
+            out = _add_zero_group_relative_raw_features(out, group_relative_base_columns)
+        else:
+            out = _add_group_relative_raw_features(out, group_relative_base_columns)
 
     for column in metadata["scale_cols"]:
         clipped_col = f"{column}_clipped"
